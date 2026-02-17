@@ -22,6 +22,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Always use context7 MCP to look up the latest documentation before writing or modifying code. For every library or framework involved, call `resolve-library-id` then `query-docs` to get up-to-date usage examples.
 - TODO 리스트를 상시 확인한다. Today 항목 중 완료된 작업이 있으면 `[x]`로 체크하고 Done으로 이동한 뒤, 관련 변경사항을 git에 커밋할지 사용자에게 물어본다.
+- 작업이 완료되면 `docs/YYYY-MM-DD.md` 파일에 일자별 완료 기록을 작성한다.
 
 ## TODO
 
