@@ -1,0 +1,11 @@
+# Local settings (may contain secrets)
+.claude/settings.local.json
+
+# Environment files
+.env
+.env.*
+*.local.json
+
+# OS files
+.DS_Store
+Thumbs.db

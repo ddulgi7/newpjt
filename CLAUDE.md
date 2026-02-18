@@ -29,15 +29,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## TODO
 
 ### Backlog
-- [ ] Multi Agent 구축
-  - [ ] Code Reviewer — 코드 비효율 확인 및 리팩토링. git commit 전에 CR 진행 여부를 사용자에게 확인
-  - [ ] Security Agent — 코드 보안 취약점 점검. CR 진행 시 함께 실행
-  - [ ] Test Automator — 단위/통합 테스트 자동 생성 및 실행. 작업 세그먼트 완료 시 병렬로 진행
+<!-- 향후 진행할 항목 -->
 
-### Today (2026-02-17)
+### Today (2026-02-18)
 <!-- 금일 진행할 항목 -->
 
 ### Done
+- [x] Multi Agent 구축 (2026-02-18)
+  - [x] Code Reviewer — `.claude/agents/code-reviewer.md`
+  - [x] Security Agent — `.claude/agents/security-agent.md`
+  - [x] Test Automator — `.claude/agents/test-automator.md`
 - [x] Context7 MCP 연동 (2026-02-17)
 - [x] GitHub MCP 연동 (2026-02-17)
 - [x] GitHub 저장소 생성 및 push (2026-02-17)
