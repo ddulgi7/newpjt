@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3 uid="uid://titlescreen001"]
+
+[ext_resource type="Script" path="res://scenes/ui/menus/title_screen.gd" id="1_script"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.12, 0.18, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -140.0
+offset_right = 120.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "PocketMon RPG"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 50)
+text = "게임 시작"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 50)
+text = "설정"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 50)
+text = "게임 종료"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -130.0
+offset_right = 160.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = -16.0
+theme_override_constants/separation = 12
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "설정"
+horizontal_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "배경음악"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 24)
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "효과음"
+
+[node name="SFXSlider" type="HSlider" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 24)
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="CloseButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+text = "닫기"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="SettingsPanel/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsPanel/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SettingsPanel/VBoxContainer/CloseButton" to="." method="_on_settings_close_pressed"]
