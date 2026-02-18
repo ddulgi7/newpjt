@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "potion",
+      "name": "Potion",
+      "category": "healing",
+      "description": "Restores 20 HP to one monster.",
+      "effect": { "type": "heal_hp", "value": 20 },
+      "price": 300,
+      "usable_in_battle": true,
+      "usable_in_field": true
+    },
+    {
+      "id": "capture_ball",
+      "name": "Capture Ball",
+      "category": "capture",
+      "description": "A ball used to capture wild monsters.",
+      "effect": { "type": "capture", "rate_modifier": 1.0 },
+      "price": 200,
+      "usable_in_battle": true,
+      "usable_in_field": false
+    },
+    {
+      "id": "antidote",
+      "name": "Antidote",
+      "category": "healing",
+      "description": "Cures poison status.",
+      "effect": { "type": "cure_status", "status": "poison" },
+      "price": 100,
+      "usable_in_battle": true,
+      "usable_in_field": true
+    },
+    {
+      "id": "revive",
+      "name": "Revive",
+      "category": "healing",
+      "description": "Revives a fainted monster with half HP.",
+      "effect": { "type": "revive", "value": 0.5 },
+      "price": 1500,
+      "usable_in_battle": true,
+      "usable_in_field": true
+    }
+  ]
+}

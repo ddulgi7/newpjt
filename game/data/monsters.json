@@ -1,0 +1,79 @@
+{
+  "monsters": [
+    {
+      "id": "flame_pup",
+      "name": "Flame Pup",
+      "type": "fire",
+      "description": "A small puppy with a flame-tipped tail.",
+      "base_stats": {
+        "hp": 45,
+        "attack": 52,
+        "defense": 43,
+        "sp_attack": 60,
+        "sp_defense": 50,
+        "speed": 65
+      },
+      "moves": [
+        { "name": "Tackle", "type": "normal", "power": 40, "accuracy": 100, "pp": 35 },
+        { "name": "Ember", "type": "fire", "power": 40, "accuracy": 100, "pp": 25 }
+      ],
+      "evolution": {
+        "level": 16,
+        "evolves_to": "flame_hound"
+      },
+      "catch_rate": 45,
+      "exp_yield": 65,
+      "sprite": "res://assets/sprites/monsters/flame_pup.png"
+    },
+    {
+      "id": "aqua_turtle",
+      "name": "Aqua Turtle",
+      "type": "water",
+      "description": "A tiny turtle that squirts water from its shell.",
+      "base_stats": {
+        "hp": 44,
+        "attack": 48,
+        "defense": 65,
+        "sp_attack": 50,
+        "sp_defense": 64,
+        "speed": 43
+      },
+      "moves": [
+        { "name": "Tackle", "type": "normal", "power": 40, "accuracy": 100, "pp": 35 },
+        { "name": "Water Gun", "type": "water", "power": 40, "accuracy": 100, "pp": 25 }
+      ],
+      "evolution": {
+        "level": 16,
+        "evolves_to": "aqua_tortoise"
+      },
+      "catch_rate": 45,
+      "exp_yield": 63,
+      "sprite": "res://assets/sprites/monsters/aqua_turtle.png"
+    },
+    {
+      "id": "leaf_sprout",
+      "name": "Leaf Sprout",
+      "type": "grass",
+      "description": "A cheerful sprout with leaves on its head.",
+      "base_stats": {
+        "hp": 45,
+        "attack": 49,
+        "defense": 49,
+        "sp_attack": 65,
+        "sp_defense": 65,
+        "speed": 45
+      },
+      "moves": [
+        { "name": "Tackle", "type": "normal", "power": 40, "accuracy": 100, "pp": 35 },
+        { "name": "Vine Whip", "type": "grass", "power": 45, "accuracy": 100, "pp": 25 }
+      ],
+      "evolution": {
+        "level": 16,
+        "evolves_to": "leaf_bloom"
+      },
+      "catch_rate": 45,
+      "exp_yield": 64,
+      "sprite": "res://assets/sprites/monsters/leaf_sprout.png"
+    }
+  ]
+}
