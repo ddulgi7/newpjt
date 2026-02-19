@@ -1,0 +1,180 @@
+[gd_scene load_steps=3 format=3 uid="uid://introseq001"]
+
+[ext_resource type="Script" path="res://scenes/ui/menus/intro_sequence.gd" id="1_intro"]
+[ext_resource type="Script" path="res://scenes/ui/menus/player_circle.gd" id="2_circle"]
+
+[node name="IntroSequence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_intro")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.08, 0.08, 0.1, 1)
+
+[node name="CharacterArea" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.65
+
+[node name="ProfessorDisplay" type="TextureRect" parent="CharacterArea"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -140.0
+offset_right = 90.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="FallbackLabel" type="Label" parent="CharacterArea/ProfessorDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "박사"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PokemonDisplay" type="TextureRect" parent="CharacterArea"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="FallbackLabel" type="Label" parent="CharacterArea/PokemonDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "포켓몬"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerDisplay" type="Control" parent="CharacterArea"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_circle")
+
+[node name="DialogBox" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.0
+anchor_top = 0.67
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 0.0
+offset_right = -12.0
+offset_bottom = -12.0
+
+[node name="Margin" type="MarginContainer" parent="DialogBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="DialogBox/Margin"]
+layout_mode = 2
+
+[node name="DialogText" type="RichTextLabel" parent="DialogBox/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 80)
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="ContinueArrow" type="Label" parent="DialogBox/Margin/VBox"]
+visible = false
+layout_mode = 2
+text = "▼"
+horizontal_alignment = 2
+
+[node name="NameInputPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="NameInputPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_constants/separation = 16
+
+[node name="PromptLabel" type="Label" parent="NameInputPanel/VBox"]
+layout_mode = 2
+text = "이름을 알려줘!"
+horizontal_alignment = 1
+
+[node name="NameLineEdit" type="LineEdit" parent="NameInputPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+placeholder_text = "트레이너"
+max_length = 12
+
+[node name="ConfirmButton" type="Button" parent="NameInputPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+text = "확인"
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+mouse_filter = 2
+
+[connection signal="pressed" from="NameInputPanel/VBox/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="text_submitted" from="NameInputPanel/VBox/NameLineEdit" to="." method="_on_name_line_edit_text_submitted"]

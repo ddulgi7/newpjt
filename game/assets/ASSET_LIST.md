@@ -128,6 +128,10 @@
 
 - [ ] `title_bg.png` — 타이틀 화면 배경 이미지 (480x854 권장)
 
+### 인트로 시퀀스
+- [ ] `sprites/characters/npc_professor.png` — 박사 전신 이미지 (180x280 권장)
+- [ ] `sprites/monsters/intro_pokemon.png` — 인트로에 등장하는 포켓몬 (200x200 권장)
+
 ### 타이틀 화면 버튼 (경로: `sprites/ui/`)
 
 - [ ] `btn_start.png` — 게임 시작 버튼 기본

@@ -82,7 +82,7 @@ func _apply_textures(btn: TextureButton, paths: Dictionary) -> void:
 # --- 버튼 콜백 ---
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/menus/intro_sequence.tscn")
 
 
 func _on_settings_button_pressed() -> void:
