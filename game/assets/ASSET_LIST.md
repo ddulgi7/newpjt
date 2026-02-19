@@ -123,13 +123,23 @@
 - [ ] `exp_bar.png` — 경험치 바 프레임
 - [ ] `type_icons.png` — 타입 아이콘 시트 (fire/water/grass/normal 등)
 
+### 타이틀 화면 버튼 (경로: `sprites/ui/`)
+> 파일을 해당 경로에 넣으면 게임 실행 시 자동 적용됩니다.
+
+- [ ] `btn_start.png` — 게임 시작 버튼 기본
+- [ ] `btn_start_hover.png` — 게임 시작 버튼 호버 (선택사항)
+- [ ] `btn_start_pressed.png` — 게임 시작 버튼 눌림 (선택사항)
+- [ ] `btn_settings.png` — 설정 버튼 기본
+- [ ] `btn_settings_hover.png` — 설정 버튼 호버 (선택사항)
+- [ ] `btn_settings_pressed.png` — 설정 버튼 눌림 (선택사항)
+- [ ] `btn_quit.png` — 게임 종료 버튼 기본
+- [ ] `btn_quit_hover.png` — 게임 종료 버튼 호버 (선택사항)
+- [ ] `btn_quit_pressed.png` — 게임 종료 버튼 눌림 (선택사항)
+
 ### 메뉴 UI
 - [ ] `menu_frame.png` — 메뉴 프레임/윈도우 9-patch
 - [ ] `dialog_frame.png` — 대화창 프레임 9-patch
 - [ ] `cursor.png` — 메뉴 커서
-- [ ] `button_normal.png` — 버튼 기본
-- [ ] `button_pressed.png` — 버튼 눌림
-- [ ] `button_hover.png` — 버튼 호버
 
 ### 아이콘
 - [ ] `icon_potion.png` — 포션 아이콘
