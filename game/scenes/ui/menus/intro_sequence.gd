@@ -170,7 +170,32 @@ func _on_confirm_button_pressed() -> void:
 	if player_name.is_empty():
 		player_name = "트레이너"
 	GameManager.player_data["name"] = player_name
-	await _fade(1.0, 0.8)
+
+	# 이름 입력 패널 닫고 박사 응원 대사 재생
+	await _fade(1.0, 0.5)
+	name_input_panel.visible = false
+	await _run_after_name(player_name)
+
+
+func _run_after_name(player_name: String) -> void:
+	var after_steps: Array[Dictionary] = [
+		{"show": "professor", "text": "%s! 멋진 이름이네!\n기억해둘게!" % player_name},
+		{"show": "professor", "text": "자, 이제 모험을 시작할 시간이야!\n포켓몬과 함께 세상을 누벼봐!"},
+		{"show": "player",    "text": "..."},
+		{"show": "professor", "text": "가자, %s!\n모험 화이팅!!" % player_name},
+	]
+	for step: Dictionary in after_steps:
+		await _show_character(step["show"])
+		dialog_box.visible = true
+		_can_advance = true
+		await _typewrite(step["text"])
+		continue_arrow.visible = true
+		_blink_arrow()
+		await _advanced
+		_stop_blink()
+		continue_arrow.visible = false
+
+	await _fade(1.0, 1.0)
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 
