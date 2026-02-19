@@ -50,13 +50,14 @@ func _ready() -> void:
 	await _run_dialog()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if not _can_advance:
 		return
-	var pressed: bool = event.is_action_just_pressed("interact") \
-		or event.is_action_just_pressed("ui_accept") \
-		or (event is InputEventMouseButton and event.pressed \
-			and event.button_index == MOUSE_BUTTON_LEFT)
+	var pressed: bool = false
+	if event is InputEventKey and event.pressed and not event.echo:
+		pressed = event.physical_keycode in [KEY_SPACE, KEY_ENTER, KEY_KP_ENTER, KEY_A, KEY_Z]
+	elif event is InputEventMouseButton and event.pressed:
+		pressed = event.button_index == MOUSE_BUTTON_LEFT
 	if not pressed:
 		return
 	get_viewport().set_input_as_handled()
