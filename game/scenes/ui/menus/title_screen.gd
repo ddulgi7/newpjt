@@ -1,7 +1,10 @@
 extends Control
 ## 타이틀/로비 화면. 게임시작, 설정, 종료 버튼.
 ##
-## 버튼 이미지 교체 방법:
+## [배경 이미지 교체]
+##   res://assets/sprites/ui/title_bg.png 를 넣으면 자동 적용됩니다.
+##
+## [버튼 이미지 교체]
 ##   아래 경로에 PNG 파일을 넣으면 자동으로 버튼에 적용됩니다.
 ##   게임 시작 : res://assets/sprites/ui/btn_start.png
 ##   설정      : res://assets/sprites/ui/btn_settings.png
@@ -16,6 +19,10 @@ extends Control
 @onready var settings_panel: Panel          = $SettingsPanel
 @onready var music_slider: HSlider          = $SettingsPanel/VBoxContainer/MusicSlider
 @onready var sfx_slider: HSlider            = $SettingsPanel/VBoxContainer/SFXSlider
+@onready var bg_color: ColorRect            = $Background
+@onready var bg_image: TextureRect          = $BackgroundImage
+
+const BG_TEXTURE_PATH := "res://assets/sprites/ui/title_bg.png"
 
 # 버튼별 이미지 경로 (이 경로에 파일을 추가하면 자동 적용)
 const BUTTON_TEXTURES := {
@@ -41,7 +48,17 @@ func _ready() -> void:
 	settings_panel.visible = false
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(_music_bus()))
 	sfx_slider.value   = db_to_linear(AudioServer.get_bus_volume_db(_sfx_bus()))
+	_load_background()
 	_load_button_textures()
+
+
+# --- 배경 이미지 로드 ---
+
+func _load_background() -> void:
+	if ResourceLoader.exists(BG_TEXTURE_PATH):
+		bg_image.texture = load(BG_TEXTURE_PATH)
+		bg_image.visible = true
+		bg_color.visible = false  # 이미지가 있으면 단색 배경 숨김
 
 
 # --- 버튼 이미지 자동 로드 ---

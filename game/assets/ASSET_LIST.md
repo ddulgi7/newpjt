@@ -123,8 +123,12 @@
 - [ ] `exp_bar.png` — 경험치 바 프레임
 - [ ] `type_icons.png` — 타입 아이콘 시트 (fire/water/grass/normal 등)
 
-### 타이틀 화면 버튼 (경로: `sprites/ui/`)
+### 타이틀 화면 (경로: `sprites/ui/`)
 > 파일을 해당 경로에 넣으면 게임 실행 시 자동 적용됩니다.
+
+- [ ] `title_bg.png` — 타이틀 화면 배경 이미지 (480x854 권장)
+
+### 타이틀 화면 버튼 (경로: `sprites/ui/`)
 
 - [ ] `btn_start.png` — 게임 시작 버튼 기본
 - [ ] `btn_start_hover.png` — 게임 시작 버튼 호버 (선택사항)
